@@ -145,7 +145,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
     private void signIn(final String email, final String password){
-        users.addListenerForSingleValueEvent(new ValueEventListener() {
+        /*users.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.child(email).exists()){
@@ -167,7 +167,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+
+
+        });*/
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
