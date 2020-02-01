@@ -2,6 +2,7 @@ package com.example.hacksc2020project.ui.login;
 
 import android.app.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -22,11 +23,22 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hacksc2020project.CreateActivity;
 import com.example.hacksc2020project.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.auth.User;
 
 public class LoginActivity extends AppCompatActivity {
+
+    FirebaseDatabase database;
+    DatabaseReference users;
+
+    EditText newEmail, newPassword;
+    Button btnCreateAcc;
 
     private LoginViewModel loginViewModel;
     @Override
@@ -40,6 +52,21 @@ public class LoginActivity extends AppCompatActivity {
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.loginButton);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
+
+        database = FirebaseDatabase.getInstance();
+        users = database.getReference("Users");
+
+        newEmail = (EditText) findViewById(R.id.newEmail);
+        newPassword = (EditText) findViewById(R.id.newPassword);
+
+        btnCreateAcc = (Button) findViewById(R.id.createButton);
+
+        btnCreateAcc.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                signIn(newEmail.getText().toString(), newPassword.getText().toString());
+            }
+        });
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
@@ -114,6 +141,31 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+            }
+        });
+    }
+    private void signIn(final String email, final String password){
+        users.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.child(email).exists()){
+                    if(!email.isEmpty()){
+                        User login = dataSnapshot.child(email).getValue(User.class);
+                        if(login.getPassword().equals(password)){
+                            Toast.makeText(LoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(LoginActivity.this, "Password is wrong", Toast.LENGTH_SHORT).show();
+                        }
+                    }else{
+                        Toast.makeText(LoginActivity.this, "Username not registered", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
     }
