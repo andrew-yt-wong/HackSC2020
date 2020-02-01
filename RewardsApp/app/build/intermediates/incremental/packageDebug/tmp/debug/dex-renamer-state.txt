@@ -1,0 +1,4 @@
+#Sat Feb 01 04:24:25 PST 2020
+base.0=C\:\\Users\\Owner\\AndroidStudioProjects\\RewardsApp\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
