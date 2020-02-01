@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-
+// Main Page
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -14,11 +14,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    //called when login button is pressed
+
+    // Takes you to the login page when the button is clicked
     public void login(View view){
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
+
+    // Takes you to the create account page when the button is clicked
     public void createAccount(View view){
         Intent intent = new Intent(this, CreateActivity.class);
         startActivity(intent);
