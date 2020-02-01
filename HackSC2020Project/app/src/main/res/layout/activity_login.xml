@@ -43,7 +43,6 @@
         android:layout_gravity="start"
         android:layout_marginBottom="64dp"
         android:enabled="true"
-        android:onClick="enter"
         android:text="@string/title_activity_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
