@@ -3,6 +3,7 @@ package com.example.hacksc2020project;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,24 +37,24 @@ public class LoginActivity extends AppCompatActivity {
 
         firebaseAuth = firebaseAuth.getInstance();
 
-        login.setOnClickListener(new View.OnClickListener(){
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 firebaseAuth.signInWithEmailAndPassword(myEmail.getText().toString(),
                         myPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "Sign In Successfully",
                                     Toast.LENGTH_LONG).show();
-                        }else{
+                        } else {
                             Toast.makeText(LoginActivity.this, task.getException().getMessage(),
                                     Toast.LENGTH_LONG).show();
                         }
                     }
                 });
+                startActivity(new Intent(LoginActivity.this, NavDrawer.class));
             }
         });
     }
-
-    }
+}
