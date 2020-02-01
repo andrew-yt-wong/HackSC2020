@@ -32,6 +32,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.auth.User;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class LoginActivity extends AppCompatActivity {
 
     FirebaseDatabase database;
@@ -39,6 +45,8 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText newEmail, newPassword;
     Button btnCreateAcc;
+
+    FirebaseAuth mAuth;
 
     private LoginViewModel loginViewModel;
     @Override
@@ -143,31 +151,58 @@ public class LoginActivity extends AppCompatActivity {
                         passwordEditText.getText().toString());
             }
         });
+
+        mAuth = FirebaseAuth.getInstance();
     }
+
     private void signIn(final String email, final String password){
-        users.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child(email).exists()){
-                    if(!email.isEmpty()){
-                        User login = dataSnapshot.child(email).getValue(User.class);
-                        if(login.getPassword().equals(password)){
-                            Toast.makeText(LoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
+        // [START sign_in_with_email]
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            FirebaseUser user = mAuth.getCurrentUser();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
                         }
-                        else{
-                            Toast.makeText(LoginActivity.this, "Password is wrong", Toast.LENGTH_SHORT).show();
+
+                        // [START_EXCLUDE]
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
                         }
-                    }else{
-                        Toast.makeText(LoginActivity.this, "Username not registered", Toast.LENGTH_SHORT).show();
+                        // [END_EXCLUDE]
                     }
-                }
-            }
+                });
+        // [END sign_in_with_email]
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+//        users.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                if(dataSnapshot.child(email).exists()){
+//                    if(!email.isEmpty()){
+//                        User login = dataSnapshot.child(email).getValue(User.class);
+//                        if(login.getPassword().equals(password)){
+//                            Toast.makeText(LoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
+//                        }
+//                        else{
+//                            Toast.makeText(LoginActivity.this, "Password is wrong", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }else{
+//                        Toast.makeText(LoginActivity.this, "Username not registered", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
