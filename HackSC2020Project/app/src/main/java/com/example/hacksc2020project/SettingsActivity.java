@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-
 public class SettingsActivity extends AppCompatActivity {
 
     ImageButton button0, button1, button2, button3, button4, button5, button6, button7, button8, button9;
@@ -18,7 +16,7 @@ public class SettingsActivity extends AppCompatActivity {
     TextView question;
     TextView display;
     EditText response;
-    ArrayList<Double> count = new ArrayList<Double>(10);
+    double count0 = 0, count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0, count6 = 0, count7 = 0, count8 = 0, count9 = 0;
     int buttonNumber = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +37,14 @@ public class SettingsActivity extends AppCompatActivity {
 
         question = findViewById(R.id.question);
         display = findViewById(R.id.displayNumber);
+        response = findViewById(R.id.response);
 
         button0.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 buttonNumber = 0;
                 question.setText("How many miles did you run today?");
-                display.setText("Current Total: " + count.get(buttonNumber).toString());
+                display.setText("Current Total: " + count0);
             }
         });
         button1.setOnClickListener(new View.OnClickListener(){
@@ -53,7 +52,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view){
                 buttonNumber = 1;
                 question.setText("How many bottles did you recycle today?");
-                //display.setText("Current Total: " + count.get(buttonNumber).toString());
+                display.setText("Current Total: " + count1);
             }
         });
         button2.setOnClickListener(new View.OnClickListener(){
@@ -61,7 +60,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view){
                 buttonNumber = 2;
                 question.setText("How many miles did you carpool today?");
-                //display.setText("Current Total: " + count.get(buttonNumber).toString());
+                display.setText("Current Total: " + count2);
             }
         });
         button3.setOnClickListener(new View.OnClickListener(){
@@ -69,7 +68,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view){
                 buttonNumber = 3;
                 question.setText("How many minutes did you leave your lights on for?");
-                //display.setText("Current Total: " + count.get(buttonNumber).toString());
+                display.setText("Current Total: " + count3);
             }
         });
         button4.setOnClickListener(new View.OnClickListener(){
@@ -77,15 +76,15 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view){
                 buttonNumber = 4;
                 question.setText("How many cups of water did you drink today?");
-                //display.setText("Current Total: " + count.get(buttonNumber).toString());
+                display.setText("Current Total: " + count4);
             }
         });
         button5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 buttonNumber = 5;
-                question.setText("How much time did you spend cleaning up?");
-                //display.setText("Current Total: " + count.get(buttonNumber).toString());
+                question.setText("How many minutes did you spend cleaning up?");
+                display.setText("Current Total: " + count5);
             }
         });
         button6.setOnClickListener(new View.OnClickListener(){
@@ -93,7 +92,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view){
                 buttonNumber = 6;
                 question.setText("How many times have you used a reusable cup?");
-                //display.setText("Current Total: " + count.get(buttonNumber).toString());
+                display.setText("Current Total: " + count6);
             }
         });
         button7.setOnClickListener(new View.OnClickListener(){
@@ -101,7 +100,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view){
                 buttonNumber = 7;
                 question.setText("How many times did you use a reusable bottle?");
-                //display.setText("Current Total: " + count.get(buttonNumber).toString());
+                display.setText("Current Total: " + count7);
             }
         });
         button8.setOnClickListener(new View.OnClickListener(){
@@ -109,7 +108,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view){
                 buttonNumber = 8;
                 question.setText("How many clothes did you buy thrift shopping?");
-                //display.setText("Current Total: " + count.get(buttonNumber).toString());
+                display.setText("Current Total: " + count8);
             }
         });
         button9.setOnClickListener(new View.OnClickListener(){
@@ -117,26 +116,57 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view){
                 buttonNumber = 9;
                 question.setText("How many times did you use a reusable bag today?");
-                //display.setText("Current Total: " + count.get(buttonNumber).toString());
+                display.setText("Current Total: " + count9);
             }
         });
-        submitButton.setOnClickListener(new View.OnClickListener(){
+        submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 question.setText("Click Button Above");
-                count.set(buttonNumber, count.get(buttonNumber) + Double.parseDouble(response.getText().toString()));
-                //display.setText("Current Total: " + count.get(buttonNumber).toString());
+                switch(buttonNumber) {
+                    case 0:
+                        count0 += Double.parseDouble(response.getText().toString());
+                        display.setText("Current Total: " + count0);
+                        break;
+                    case 1:
+                        count1 += Double.parseDouble(response.getText().toString());
+                        display.setText("Current Total: " + count1);
+                        break;
+                    case 2:
+                        count2 += Double.parseDouble(response.getText().toString());
+                        display.setText("Current Total: " + count2);
+                        break;
+                    case 3:
+                        count3 += Double.parseDouble(response.getText().toString());
+                        display.setText("Current Total: " + count3);
+                        break;
+                    case 4:
+                        count4 += Double.parseDouble(response.getText().toString());
+                        display.setText("Current Total: " + count4);
+                        break;
+                    case 5:
+                        count5 += Double.parseDouble(response.getText().toString());
+                        display.setText("Current Total: " + count5);
+                        break;
+                    case 6:
+                        count6 += Double.parseDouble(response.getText().toString());
+                        display.setText("Current Total: " + count6);
+                        break;
+                    case 7:
+                        count7 += Double.parseDouble(response.getText().toString());
+                        display.setText("Current Total: " + count7);
+                        break;
+                    case 8:
+                        count8 += Double.parseDouble(response.getText().toString());
+                        display.setText("Current Total: " + count8);
+                        break;
+                    case 9:
+                        count9 += Double.parseDouble(response.getText().toString());
+                        display.setText("Current Total: " + count9);
+                        break;
+                }
             }
         });
-
     }
-
-
-
-//    public static class SettingsFragment extends PreferenceFragmentCompat {
-//        @Override
-//        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-//            setPreferencesFromResource(R.xml.root_preferences, rootKey);
-//        }
-//    }
 }
+

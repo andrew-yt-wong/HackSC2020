@@ -1,10 +1,10 @@
 package com.example.hacksc2020project;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 // Main Page
 public class MainActivity extends AppCompatActivity {
@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     // Takes you to the login page when the button is clicked
     public void login(View view){
-        Intent intent = new Intent(this, LoginActivity.class);
+       // Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
 
