@@ -88,9 +88,9 @@
     </LinearLayout>
 
     <Switch
-        android:id="@+id/settings"
+        android:id="@+id/darkmode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Switch" />
+        android:text="Dark Mode" />
 
 </LinearLayout>
