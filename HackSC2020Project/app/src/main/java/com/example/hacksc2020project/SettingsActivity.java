@@ -26,13 +26,13 @@ public class SettingsActivity extends AppCompatActivity {
         button0 = findViewById(R.id.running_button); //5 miles, 25 miles, 100 miles
         button1 = findViewById(R.id.recycle_button); //50 bottles, 1250 bottles, 500 bottles
         button2 = findViewById(R.id.carpool_button); //20 miles, 100, 250 miles
-        button3 = findViewById(R.id.electricty_button); //
-        button4 = findViewById(R.id.water_button);
-        button5 = findViewById(R.id.clean_button);
-        button6 = findViewById(R.id.coffeecup_button);
-        button7 = findViewById(R.id.bottle_button);
-        button8 = findViewById(R.id.thrift_button);
-        button9 = findViewById(R.id.bag_button);
+        button3 = findViewById(R.id.electricty_button); //5 hours, 15 hours, 50 hours
+        button4 = findViewById(R.id.water_button); // 5 min, 10 min, 15 min
+        button5 = findViewById(R.id.clean_button); // 30 min, 90 min, 180 min
+        button6 = findViewById(R.id.coffeecup_button); // 1 time, 5 times, 15 times
+        button7 = findViewById(R.id.bottle_button); //5 times, 15 times, 30 times
+        button8 = findViewById(R.id.thrift_button); //1 times, 5 times, 20 times
+        button9 = findViewById(R.id.bag_button); // 5 times, 25 times, 75 times
         submitButton = findViewById(R.id.submitButton);
 
         question = findViewById(R.id.question);
@@ -67,7 +67,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 buttonNumber = 3;
-                question.setText("How many hours did you leave your lights on for?");
+                question.setText("How many hours did you save electricity?");
                 display.setText("Current Total: " + count3);
             }
         });
@@ -75,7 +75,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 buttonNumber = 4;
-                question.setText("How many cups of water did you drink today?");
+                question.setText("How many minutes shorter are your showers?");
                 display.setText("Current Total: " + count4);
             }
         });
@@ -83,7 +83,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 buttonNumber = 5;
-                question.setText("How many minutes did you spend cleaning up?");
+                question.setText("How many minutes did you spend cleaning the environment?");
                 display.setText("Current Total: " + count5);
             }
         });
@@ -107,7 +107,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 buttonNumber = 8;
-                question.setText("How many clothes did you buy thrift shopping?");
+                question.setText("How many times have you chosen to go thrift shopping?");
                 display.setText("Current Total: " + count8);
             }
         });
@@ -127,6 +127,7 @@ public class SettingsActivity extends AppCompatActivity {
                     case 0:
                         count0 += Double.parseDouble(response.getText().toString());
                         display.setText("Current Total: " + count0);
+                      //  if(count0 >= )
                         break;
                     case 1:
                         count1 += Double.parseDouble(response.getText().toString());
