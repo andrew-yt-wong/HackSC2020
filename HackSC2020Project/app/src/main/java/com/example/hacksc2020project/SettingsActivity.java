@@ -24,7 +24,7 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.settings_activity);
 
         button0 = findViewById(R.id.running_button); //5 miles, 25 miles, 100 miles
-        button1 = findViewById(R.id.recycle_button); //50 bottles, 1250 bottles, 500 bottles
+        button1 = findViewById(R.id.recycle_button); //50 bottles, 250 bottles, 500 bottles
         button2 = findViewById(R.id.carpool_button); //20 miles, 100, 250 miles
         button3 = findViewById(R.id.electricty_button); //5 hours, 15 hours, 50 hours
         button4 = findViewById(R.id.water_button); // 5 min, 10 min, 15 min
@@ -127,43 +127,112 @@ public class SettingsActivity extends AppCompatActivity {
                     case 0:
                         count0 += Double.parseDouble(response.getText().toString());
                         display.setText("Current Total: " + count0);
-                      //  if(count0 >= )
+                        if(count0 >= 100){
+                            button0.setImageResource(R.drawable.gold_running_medal);
+                        }else if(count0 >=25){
+                            button0.setImageResource(R.drawable.silver_running_medal);
+                        }else if(count0 >= 5){
+                            button0.setImageResource(R.drawable.bronze_running_medal);
+                        }
                         break;
                     case 1:
                         count1 += Double.parseDouble(response.getText().toString());
                         display.setText("Current Total: " + count1);
+                        if(count1 >= 500){
+                            button1.setImageResource(R.drawable.gold_recycle_medal);
+                        }else if(count1 >=250){
+                            button1.setImageResource(R.drawable.silver_recycle_medal);
+                        }else if(count1 >= 50){
+                            button1.setImageResource(R.drawable.bronze_recycle_medal);
+                        }
                         break;
                     case 2:
                         count2 += Double.parseDouble(response.getText().toString());
                         display.setText("Current Total: " + count2);
+                        if(count2 >= 250){
+                            button2.setImageResource(R.drawable.gold_medal_carpool);
+                        }else if(count2 >=100){
+                            button2.setImageResource(R.drawable.silver_medal_carpool);
+                        }else if(count2 >= 20){
+                            button2.setImageResource(R.drawable.bronze_medal_carpool);
+                        }
                         break;
                     case 3:
                         count3 += Double.parseDouble(response.getText().toString());
                         display.setText("Current Total: " + count3);
+                        if(count3 >= 50){
+                            button3.setImageResource(R.drawable.gold_medal_electricity);
+                        }else if(count3 >=15){
+                            button3.setImageResource(R.drawable.silver_medal_electricity);
+                        }else if(count3 > 5){
+                            button3.setImageResource(R.drawable.bronze_medal_electricity);
+                        }
                         break;
                     case 4:
                         count4 += Double.parseDouble(response.getText().toString());
                         display.setText("Current Total: " + count4);
+                        if(count4 >= 15){
+                            button4.setImageResource(R.drawable.gold_medal_water);
+                        }else if(count4 >= 10){
+                            button4.setImageResource(R.drawable.silver_medal_water);
+                        }else if(count4 >= 5){
+                            button4.setImageResource(R.drawable.bronze_medal_water);
+                        }
                         break;
                     case 5:
                         count5 += Double.parseDouble(response.getText().toString());
                         display.setText("Current Total: " + count5);
+                        if(count5 >= 180){
+                            button5.setImageResource(R.drawable.gold_cleanup_medal);
+                        }else if(count5 >= 90){
+                            button5.setImageResource(R.drawable.silver_cleanup_medal);
+                        }else if(count5 >= 30){
+                            button5.setImageResource(R.drawable.bronze_cleanup_medal);
+                        }
                         break;
                     case 6:
                         count6 += Double.parseDouble(response.getText().toString());
                         display.setText("Current Total: " + count6);
+                        if(count6 >= 15){
+                            button6.setImageResource(R.drawable.gold_medal_coffee);
+                        }else if(count6 >= 5){
+                            button6.setImageResource(R.drawable.silver_medal_coffee);
+                        }else if(count6 >= 1){
+                            button6.setImageResource(R.drawable.bronze_medal_coffee);
+                        }
                         break;
                     case 7:
                         count7 += Double.parseDouble(response.getText().toString());
                         display.setText("Current Total: " + count7);
+                        if(count7 >= 30){
+                            button7.setImageResource(R.drawable.gold_bottle_medal);
+                        }else if(count7 >= 15){
+                            button7.setImageResource(R.drawable.silver_bottle_medal);
+                        }else if(count7 >= 5){
+                            button7.setImageResource(R.drawable.bronze_bottle_medal);
+                        }
                         break;
                     case 8:
                         count8 += Double.parseDouble(response.getText().toString());
                         display.setText("Current Total: " + count8);
+                        if(count8 >= 20){
+                            button8.setImageResource(R.drawable.gold_medal_thrift);
+                        }else if(count8 >= 5){
+                            button8.setImageResource(R.drawable.silver_medal_thrift);
+                        }else if(count8 >= 1){
+                            button8.setImageResource(R.drawable.bronze_medal_thrift);
+                        }
                         break;
                     case 9:
                         count9 += Double.parseDouble(response.getText().toString());
                         display.setText("Current Total: " + count9);
+                        if(count9 >= 75){
+                            button9.setImageResource(R.drawable.gold_bag_medal);
+                        }else if(count9 >= 25){
+                            button9.setImageResource(R.drawable.silver_bag_medal);
+                        }else if(count9 >= 5){
+                            button9.setImageResource(R.drawable.bronze_bag_medal);
+                        }
                         break;
                 }
             }

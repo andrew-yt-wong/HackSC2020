@@ -17,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Takes you to the login page when the button is clicked
     public void login(View view){
-       // Intent intent = new Intent(this, LoginActivity.class);
-        Intent intent = new Intent(this, SettingsActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 
