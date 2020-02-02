@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.MedalsActivity"
+            android:label="@string/title_activity_medals"></activity>
+        <activity
             android:name=".BottomNavigation"
-            android:label="@string/title_activity_bottom_navigation"></activity>
+            android:label="@string/title_activity_bottom_navigation" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".CreateActivity" />
         <activity
