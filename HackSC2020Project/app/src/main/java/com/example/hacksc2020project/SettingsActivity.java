@@ -23,10 +23,10 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
 
-        button0 = findViewById(R.id.running_button);
-        button1 = findViewById(R.id.recycle_button);
-        button2 = findViewById(R.id.carpool_button);
-        button3 = findViewById(R.id.electricty_button);
+        button0 = findViewById(R.id.running_button); //5 miles, 25 miles, 100 miles
+        button1 = findViewById(R.id.recycle_button); //50 bottles, 1250 bottles, 500 bottles
+        button2 = findViewById(R.id.carpool_button); //20 miles, 100, 250 miles
+        button3 = findViewById(R.id.electricty_button); //
         button4 = findViewById(R.id.water_button);
         button5 = findViewById(R.id.clean_button);
         button6 = findViewById(R.id.coffeecup_button);
@@ -67,7 +67,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 buttonNumber = 3;
-                question.setText("How many minutes did you leave your lights on for?");
+                question.setText("How many hours did you leave your lights on for?");
                 display.setText("Current Total: " + count3);
             }
         });
@@ -167,6 +167,7 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 }
 
