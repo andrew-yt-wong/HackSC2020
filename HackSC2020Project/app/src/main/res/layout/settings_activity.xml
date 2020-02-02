@@ -14,6 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/white"
             app:srcCompat="@drawable/empty_running_medal" />
 
         <ImageButton
@@ -21,6 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/white"
             app:srcCompat="@drawable/empty_recycle_medal" />
     </LinearLayout>
 
@@ -34,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/white"
             app:srcCompat="@drawable/empty_medal_carpool" />
 
         <ImageButton
@@ -41,12 +44,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/white"
             app:srcCompat="@drawable/empty_medal_electricity" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="72dp"
         android:orientation="horizontal">
 
         <ImageButton
@@ -54,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/white"
             app:srcCompat="@drawable/empty_medal_water" />
 
         <ImageButton
@@ -61,6 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/white"
             app:srcCompat="@drawable/empty_cleanup_medal" />
     </LinearLayout>
 
@@ -74,6 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/white"
             app:srcCompat="@drawable/empty_medal_coffee" />
 
         <ImageButton
@@ -81,6 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/white"
             app:srcCompat="@drawable/empty_bottle_medal" />
     </LinearLayout>
 
@@ -94,6 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/white"
             app:srcCompat="@drawable/empty_medal_thrift" />
 
         <ImageButton
@@ -101,6 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/white"
             app:srcCompat="@drawable/empty_bag_medal" />
 
     </LinearLayout>
