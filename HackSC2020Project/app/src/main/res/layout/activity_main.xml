@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:fontFamily="@font/cabin"
         android:text="Good Nature"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,6 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/cabin"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <Button
@@ -34,13 +36,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="login"
-            android:text="Sign In" />
+            android:text="Sign In"
+            android:fontFamily="@font/cabin"
+            android:background="#e7ff8c"/>
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="createAccount"
-            android:text="Create Account" />
+            android:text="Create Account"
+            android:fontFamily="@font/cabin"
+            android:background="#e7ff8c"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
