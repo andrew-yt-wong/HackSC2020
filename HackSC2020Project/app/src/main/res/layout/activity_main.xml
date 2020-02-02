@@ -20,38 +20,49 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-        <Button
-            android:id="@+id/loginButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="login"
-            android:text="Sign In"
-            android:fontFamily="@font/cabin"
-            android:background="#e7ff8c"
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="16dp"
+        android:background="#e7ff8c"
+        android:fontFamily="@font/cabin"
+        android:onClick="login"
 
-            app:layout_constraintBottom_toTopOf="@+id/button2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
+        android:text="Sign In"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginBottom="236dp"
         android:background="#e7ff8c"
         android:fontFamily="@font/cabin"
         android:onClick="createAccount"
         android:text="Create Account"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="431dp" />
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_marginTop="36dp"
         app:layout_constraintBottom_toTopOf="@+id/ButtonLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/sprout"
-        tools:layout_editor_absoluteX="168dp" />
+        app:srcCompat="@drawable/sprout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
