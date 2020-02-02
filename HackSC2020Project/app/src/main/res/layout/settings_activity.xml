@@ -115,14 +115,6 @@
 
     </LinearLayout>
 
-    <Switch
-        android:id="@+id/darkmode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dark Mode"
-        android:textColorHighlight="#7ecb20"
-        android:textColorLink="#e7ff8c" />
-
     <TextView
         android:id="@+id/question"
         android:layout_width="match_parent"
