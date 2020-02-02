@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/cabin"
         android:text="Medal-ing with Nature"
         android:textSize="36sp"
@@ -20,13 +20,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+<!--     top button--><![CDATA[-->
+
+    ]]><!--        app:layout_constraintTop_toBottomOf="@+id/loginButton" />-->
+
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
-        android:layout_marginBottom="16dp"
         android:background="#e7ff8c"
         android:fontFamily="@font/cabin"
         android:onClick="login"
@@ -38,29 +41,32 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="1.0" />
 
+<!--    create account; bottom button-->
+
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginBottom="236dp"
-        android:background="#e7ff8c"
-        android:fontFamily="@font/cabin"
-        android:onClick="createAccount"
-        android:text="Create Account"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
+
+        android:background="#e7ff8c"
+        android:fontFamily="@font/cabin"
+
+        android:onClick="createAccount"
+        android:text="Create Account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="36dp"
-        app:layout_constraintBottom_toTopOf="@+id/ButtonLayout"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
