@@ -1,9 +1,11 @@
 package com.example.hacksc2020project;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -25,6 +27,25 @@ public class BottomNavigation extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item){
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        break;
+
+                    case R.id.navigation_dashboard:
+                        break;
+
+                    case R.id.navigation_notifications:
+                        break;
+
+
+                }
+                return false;
+            }
+        });
     }
 
 }
