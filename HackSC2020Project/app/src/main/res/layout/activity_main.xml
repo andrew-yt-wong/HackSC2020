@@ -18,12 +18,6 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
-    <!--     top button--><![CDATA[-->
-
-    ]]><!--        app:layout_constraintTop_toBottomOf="@+id/loginButton" />-->
-
     <!--    create account; bottom button-->
 
     <Button
