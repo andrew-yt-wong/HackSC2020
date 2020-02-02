@@ -10,35 +10,35 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton16"
+            android:id="@+id/running_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/empty_running_medal" />
 
         <ImageButton
-            android:id="@+id/imageButton15"
+            android:id="@+id/recycle_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/empty_recycle_medal" />
 
         <ImageButton
-            android:id="@+id/imageButton12"
+            android:id="@+id/electricty_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/empty_medal_electricity" />
 
         <ImageButton
-            android:id="@+id/imageButton10"
+            android:id="@+id/carpool_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/empty_medal_carpool" />
 
         <ImageButton
-            android:id="@+id/imageButton9"
+            android:id="@+id/coffeecup_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -51,35 +51,35 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton14"
+            android:id="@+id/water_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/empty_medal_water" />
 
         <ImageButton
-            android:id="@+id/imageButton13"
+            android:id="@+id/thrift_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/empty_medal_thrift" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/clean_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/empty_cleanup_medal" />
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/bottle_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/empty_bottle_medal" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/bag_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
